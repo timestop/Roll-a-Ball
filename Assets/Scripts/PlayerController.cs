@@ -21,5 +21,10 @@ public class PlayerController : MonoBehaviour {
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
 		rb.AddForce (movement * speed);
+
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			Vector3 jumpForce = new Vector3 (0.0f, 100.0f, 0.0f);
+			rb.AddForce (jumpForce);
+		}
 	}
 }
